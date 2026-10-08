@@ -7,11 +7,13 @@ require_once "controllers/GameController.php";
 require_once "controllers/TheLoaiController.php";
 require_once "controllers/NhaPhatHanhController.php";
 require_once "controllers/TaiKhoanController.php";
+require_once "controllers/UserController.php";
 
 $action = $_GET["action"] ?? "";
 
 switch ($action):
 
+    // ===== GAME =====
     case "createGame":
         $controller = new GameController();
         $controller->create();
@@ -19,14 +21,15 @@ switch ($action):
 
     case "updateGame":
         $controller = new GameController();
-        $controller->update((int) ($_GET["id"] ?? 0));
+        $controller->update((int)($_GET["id"] ?? 0));
         break;
 
     case "deleteGame":
         $controller = new GameController();
-        $controller->delete((int) ($_GET["id"] ?? 0));
+        $controller->delete((int)($_GET["id"] ?? 0));
         break;
 
+    // ===== THE LOAI =====
     case "createTheLoai":
         $controller = new TheLoaiController();
         $controller->create();
@@ -34,15 +37,15 @@ switch ($action):
 
     case "updateTheLoai":
         $controller = new TheLoaiController();
-        $controller->update((int) ($_GET["id"] ?? 0));
+        $controller->update((int)($_GET["id"] ?? 0));
         break;
 
     case "deleteTheLoai":
         $controller = new TheLoaiController();
-        $controller->delete((int) ($_GET["id"] ?? 0));
+        $controller->delete((int)($_GET["id"] ?? 0));
         break;
 
-    // case "createNhaPhatHanh":
+     // case "createNhaPhatHanh":
     //     $controller = new NhaPhatHanhController();
     //     $controller->create();
     //     break;
@@ -72,10 +75,9 @@ switch ($action):
     //     $controller->delete((int) ($_GET["id"] ?? 0));
     //     break;
 
-    // default:
-    //     $controller = new GameController();
-    //     $controller->admin();
-    //     break;
+    default:
+        header("Location: user.php?action=dangnhap");
+        exit;
 
 endswitch;
 
