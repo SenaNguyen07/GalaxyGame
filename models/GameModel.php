@@ -20,21 +20,6 @@ class GameModel
         return $this->pdo->query($sql)->fetchAll();
     }
 
-    public function timKiem($tuKhoa)
-    {
-        $sql = "SELECT g.*, tl.TenTheLoai, nph.TenNhaPhatHanh
-                FROM Game g
-                INNER JOIN TheLoai tl ON g.MaTheLoai = tl.MaTheLoai
-                INNER JOIN NhaPhatHanh nph ON g.MaNhaPhatHanh = nph.MaNhaPhatHanh
-                WHERE g.TenGame LIKE ?
-                ORDER BY g.MaGame DESC";
-
-        $stmt = $this->pdo->prepare($sql);
-        $stmt->execute(["%" . $tuKhoa . "%"]);
-
-        return $stmt->fetchAll();
-    }
-
     public function layGame($maGame)
     {
         $stmt = $this->pdo->prepare(

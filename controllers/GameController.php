@@ -13,24 +13,6 @@ class GameController
         $this->model = new GameModel($db->getConnection());
     }
 
-    public function index()
-    {
-        $tuKhoa = trim($_GET["timkiem"] ?? "");
-
-        if ($tuKhoa != "") {
-            $games = $this->model->timKiem($tuKhoa);
-        } else {
-            $games = $this->model->layDanhSach();
-        }
-
-        $theLoais = $this->model->layTheLoai();
-        $nhaPhatHanhs = $this->model->layNhaPhatHanh();
-        $gameSua = null;
-        $loi = "";
-
-        require __DIR__ . "/../view/game.php";
-    }
-
     public function create()
     {
         if ($_SERVER["REQUEST_METHOD"] == "GET") {
@@ -80,7 +62,7 @@ class GameController
             $ngayPhatHanh
         );
 
-        header("Location: index.php");
+        header("Location: admin.php");
         exit;
     }
 
@@ -136,7 +118,7 @@ class GameController
             $trangThai
         );
 
-        header("Location: index.php");
+        header("Location: admin.php");
         exit;
     }
 
@@ -145,10 +127,9 @@ class GameController
         try {
             $this->model->xoa($maGame);
         } catch (PDOException $e) {
-            // Không xóa được do có dữ liệu liên quan
         }
 
-        header("Location: index.php");
+        header("Location: admin.php");
         exit;
     }
 }

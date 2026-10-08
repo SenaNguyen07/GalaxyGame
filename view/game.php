@@ -14,9 +14,9 @@ KiemTraAdmin();
 <div class="Thanh MenuAdmin">
     <b class="Logo">GalaxyGame</b>
     <a href="QuanTri.php">Tổng quan</a>
-    <a href="index.php">Game</a>
+    <a href="admin.php">Game</a>
     <a href="">Thể loại</a>
-    <a href="">NPH</a>
+    <a href="">NPH</a>a
     <a href="">Tài khoản</a>
     <a href="">👤</a>
 </div>
@@ -25,17 +25,6 @@ KiemTraAdmin();
 
     <div class="Khung">
         <h2>Quản lý Game</h2>
-
-        <form class="TimKiem" method="get">
-            <input
-                class="O"
-                type="text"
-                name="timkiem"
-                value="<?= HienThi($_GET["timkiem"] ?? "") ?>"
-                placeholder="Tìm tên game">
-
-            <button class="Nut">Tìm kiếm</button>
-        </form>
 
         <?php if (!empty($loi)): ?>
             <?php ThongBao("loi", $loi); ?>
@@ -192,13 +181,13 @@ KiemTraAdmin();
                 <td>
                     <a
                         class="Nut"
-                        href="index.php?action=update&id=<?= $g["MaGame"] ?>">
+                        href="admin.php?action=update&id=<?= $g["MaGame"] ?>">
                         Sửa
                     </a>
 
                     <a
                         class="Nut NutDo"
-                        href="index.php?action=delete&id=<?= $g["MaGame"] ?>"
+                        href="admin.php?action=delete&id=<?= $g["MaGame"] ?>"
                         onclick="return confirm('Bạn có chắc muốn xóa game này?')">
                         Xóa
                     </a>
