@@ -1,5 +1,4 @@
 <?php
-KiemTraAdmin();
 class GameModel
 {
     private $pdo;

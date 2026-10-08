@@ -69,3 +69,5 @@ class TheLoaiModel
         return $stmt->execute([$maTheLoai]);
     }
 }
+
+?>

@@ -2,6 +2,9 @@
 
 require_once __DIR__ . "/../models/TheLoaiModel.php";
 require_once __DIR__ . "/../database.php";
+require_once __DIR__ . "/../function.php";
+
+KiemTraAdmin();
 
 class TheLoaiController
 {
@@ -85,9 +88,14 @@ class TheLoaiController
 
     public function delete($maTheLoai)
     {
-        $this->model->xoa($maTheLoai);
+        try {
+            $this->model->xoa($maTheLoai);
+        } catch (PDOException $e) {
+        }
 
         header("Location: admin.php?action=theloai");
         exit;
     }
 }
+
+?>

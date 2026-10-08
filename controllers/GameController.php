@@ -2,7 +2,10 @@
 
 require_once __DIR__ . "/../models/GameModel.php";
 require_once __DIR__ . "/../database.php";
+require_once __DIR__ . "/../function.php";
+
 KiemTraAdmin();
+
 class GameController
 {
     private $model;
@@ -11,6 +14,18 @@ class GameController
     {
         $db = new Database();
         $this->model = new GameModel($db->getConnection());
+    }
+
+    public function admin()
+    {
+        $games = $this->model->layDanhSach();
+        $theLoais = $this->model->layTheLoai();
+        $nhaPhatHanhs = $this->model->layNhaPhatHanh();
+
+        $gameSua = null;
+        $loi = "";
+
+        require __DIR__ . "/../view/game.php";
     }
 
     public function create()
@@ -62,7 +77,7 @@ class GameController
             $ngayPhatHanh
         );
 
-        header("Location: admin.php");
+        header("Location: admin.php?action=game");
         exit;
     }
 
@@ -118,7 +133,7 @@ class GameController
             $trangThai
         );
 
-        header("Location: admin.php");
+        header("Location: admin.php?action=game");
         exit;
     }
 
@@ -129,7 +144,9 @@ class GameController
         } catch (PDOException $e) {
         }
 
-        header("Location: admin.php");
+        header("Location: admin.php?action=game");
         exit;
     }
 }
+
+?>

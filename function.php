@@ -10,25 +10,25 @@ function DinhDangTien($gia)
     return number_format((float)$gia, 0, ",", ".") . " VNĐ";
 }
 
-function TimKiem($tuKhoa)
-{
-    return "%" . $tuKhoa . "%";
-}
-
 function KiemTraDangNhap()
 {
     if (!isset($_SESSION["MaTaiKhoan"])) {
-        header("Location: DangNhap.php");
+        header("Location: user.php?action=dangnhap");
         exit;
     }
 }
 
 function KiemTraAdmin()
 {
-    if (!isset($_SESSION["VaiTro"]) || $_SESSION["VaiTro"] != "admin") {
-        header("Location: DangNhap.php");
+    if (!isset($_SESSION["MaTaiKhoan"]) || $_SESSION["VaiTro"] != "admin") {
+        header("Location: user.php?action=dangnhap");
         exit;
     }
+}
+
+function TimKiem($tuKhoa)
+{
+    return "%" . $tuKhoa . "%";
 }
 
 function ThongBao($loai, $noiDung)

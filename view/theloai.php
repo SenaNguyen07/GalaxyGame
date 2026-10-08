@@ -89,7 +89,7 @@ KiemTraAdmin();
 
         <h3>Thêm Thể loại</h3>
 
-        <form method="post" action="index.php?action=createTheLoai">
+        <form method="post" action="admin.php?action=updateTheLoai&id=<?= $theLoaiSua["MaTheLoai"] ?>">
 
             <input
                 class="O"
