@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-require_once __DIR__. "function.php";
-require_once __DIR__. "database.php";
-require_once __DIR__. "controllers/GameController.php";
-require_once __DIR__. "controllers/TheLoaiController.php";
+require_once __DIR__. "../function.php";
+require_once __DIR__. "../database.php";
+require_once __DIR__. "../controllers/GameController.php";
+require_once __DIR__. "../controllers/TheLoaiController.php";
 
 // KiemTraAdmin(); 
 

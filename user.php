@@ -2,13 +2,21 @@
 
 session_start();
 
-include_once __DIR__ . "controllers/UserController.php";
+include_once __DIR__ . "../controllers/UserController.php";
 
 $controller = new UserController();
 
-$action = $_GET["action"] ?? "trangchu";
+$action = $_GET["action"] ?? "dangnhap";
 
 switch ($action):
+
+    case "dangnhap":
+        $controller->dangNhap();
+        break;
+
+        case "dangxuat":
+        $controller->dangXuat();
+        break;
 
     case "trangchu":
         $controller->trangChu();

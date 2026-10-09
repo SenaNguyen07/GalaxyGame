@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Quản lý Game</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -15,7 +15,7 @@
     <b class="Logo">GalaxyGame</b>
     <a href="QuanTri.php">Tổng quan</a>
     <a href="admin.php?action=game">Game</a>
-    <a href="admin.php?action=game">Thể loại</a>
+    <a href="admin.php?action=theloai">Thể loại</a>
     <a href="">NPH</a>
     <a href="">Tài khoản</a>
     <a href="">👤</a>

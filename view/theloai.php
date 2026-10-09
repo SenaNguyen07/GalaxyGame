@@ -14,7 +14,7 @@
 
     <title>Quản lý Thể loại</title>
 
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
 
@@ -25,8 +25,8 @@
     <b class="Logo">GalaxyGame</b>
 
     <a href="QuanTri.php">Tổng quan</a>
-    <a href="game.php">Game</a>
-    <a href="theloai.php">Thể loại</a>
+    <a href="admin.php?action=game">Game</a>
+    <a href="admin.php?action=theloai">Thể loại</a>
     <a href="">NPH</a>
     <a href="">Tài khoản</a>
     <a href="">👤</a>

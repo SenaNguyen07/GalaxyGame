@@ -1,8 +1,8 @@
 <?php
 
-require_once __DIR__ . "../models/GameModel.php";
-require_once __DIR__ . "../database.php";
-require_once __DIR__ . "../function.php";
+require_once __DIR__ . "/../models/GameModel.php";
+require_once __DIR__ . "/../database.php";
+require_once __DIR__ . "/../function.php";
 
 class GameController
 {
@@ -25,7 +25,7 @@ class GameController
         $gameSua = null;
         $loi = "";
 
-        require __DIR__ . "../view/game.php";
+        require __DIR__ . "/../view/game.php";
     }
 
     public function create()
@@ -64,7 +64,7 @@ class GameController
             $nhaPhatHanhs = $this->model->layNhaPhatHanh();
             $gameSua = null;
 
-            require __DIR__ . "../view/game.php";
+            require __DIR__ . "/../view/game.php";
             return;
         }
 
@@ -90,7 +90,7 @@ class GameController
             $gameSua = $this->model->layGame($maGame);
             $loi = "";
 
-            require __DIR__ . "../view/game.php";
+            require __DIR__ . "/../view/game.php";
             return;
         }
 
@@ -118,7 +118,7 @@ class GameController
             $nhaPhatHanhs = $this->model->layNhaPhatHanh();
             $gameSua = $this->model->layGame($maGame);
 
-            require __DIR__ . "../view/game.php";
+            require __DIR__ . "/../view/game.php";
             return;
         }
 
