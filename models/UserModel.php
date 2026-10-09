@@ -41,9 +41,7 @@ class UserModel
                 ORDER BY g.MaGame DESC";
 
         $stmt = $this->pdo->prepare($sql);
-        $key = TimKiem($tuKhoa);
-        $stmt->execute([$key, $key]);
-
+        
         return $stmt->fetchAll();
     }
 

@@ -1,8 +1,8 @@
-<?php
+<!-- <?php
 
-KiemTraAdmin();
+// KiemTraAdmin();
 
-?>
+?> -->
 
 <!DOCTYPE html>
 
@@ -14,7 +14,7 @@ KiemTraAdmin();
 
     <title>Quản lý Thể loại</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 
 </head>
 
@@ -25,8 +25,8 @@ KiemTraAdmin();
     <b class="Logo">GalaxyGame</b>
 
     <a href="QuanTri.php">Tổng quan</a>
-    <a href="admin.php">Game</a>
-    <a href="admin.php?action=theloai">Thể loại</a>
+    <a href="game.php">Game</a>
+    <a href="theloai.php">Thể loại</a>
     <a href="">NPH</a>
     <a href="">Tài khoản</a>
     <a href="">👤</a>
@@ -53,7 +53,7 @@ KiemTraAdmin();
 
         <h3>Sửa Thể loại</h3>
 
-        <form method="post" action="index.php?action=updateTheLoai&id=<?= $theLoaiSua["MaTheLoai"] ?>">
+        <form method="post" action="admin.php?action=updateTheLoai&id=<?= $theLoaiSua["MaTheLoai"] ?>">
 
             <input
                 class="O"
@@ -77,7 +77,7 @@ KiemTraAdmin();
 
             <button class="Nut">Lưu</button>
 
-            <a class="Nut NutXam" href="index.php?action=theloai">Hủy</a>
+            <a class="Nut NutXam" href="admin.php?action=theloai">Hủy</a>
 
         </form>
 
@@ -89,7 +89,7 @@ KiemTraAdmin();
 
         <h3>Thêm Thể loại</h3>
 
-        <form method="post" action="admin.php?action=updateTheLoai&id=<?= $theLoaiSua["MaTheLoai"] ?>">
+        <form method="post" action="admin.php?action=createTheLoai">
 
             <input
                 class="O"

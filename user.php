@@ -1,19 +1,14 @@
 <?php
 
-include_once __DIR__ . "/controllers/UserController.php";
+session_start();
+
+include_once __DIR__ . "controllers/UserController.php";
 
 $controller = new UserController();
 
 $action = $_GET["action"] ?? "trangchu";
 
 switch ($action):
-    case "dangnhap":
-        $controller->dangNhap();
-        break;
-
-    case "dangxuat":
-        $controller->dangXuat();
-        break;
 
     case "trangchu":
         $controller->trangChu();
@@ -64,4 +59,7 @@ switch ($action):
     default:
         $controller->trangChu();
         break;
+
 endswitch;
+
+?>

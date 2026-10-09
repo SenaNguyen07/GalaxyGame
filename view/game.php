@@ -1,12 +1,12 @@
-<?php
-KiemTraAdmin();
-?>
+<!-- <?php
+// KiemTraAdmin();
+?> -->
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <title>Quản lý Game</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
@@ -14,9 +14,9 @@ KiemTraAdmin();
 <div class="Thanh MenuAdmin">
     <b class="Logo">GalaxyGame</b>
     <a href="QuanTri.php">Tổng quan</a>
-    <a href="admin.php">Game</a>
-    <a href="">Thể loại</a>
-    <a href="">NPH</a>a
+    <a href="admin.php?action=game">Game</a>
+    <a href="admin.php?action=game">Thể loại</a>
+    <a href="">NPH</a>
     <a href="">Tài khoản</a>
     <a href="">👤</a>
 </div>
@@ -36,7 +36,7 @@ KiemTraAdmin();
     <div class="Khung">
         <h3>Sửa Game</h3>
 
-        <form method="post" action="index.php?action=update&id=<?= $gameSua["MaGame"] ?>">
+        <form method="post" action="admin.php?action=updateGame&id=<?= $gameSua["MaGame"] ?>">
 
             <input
                 class="O"
@@ -94,7 +94,7 @@ KiemTraAdmin();
             </select>
 
             <button class="Nut">Lưu</button>
-            <a class="Nut NutXam" href="index.php">Hủy</a>
+            <a class="Nut NutXam" href="admin.php?action=game">Hủy</a>
 
         </form>
     </div>
@@ -104,7 +104,7 @@ KiemTraAdmin();
     <div class="Khung">
         <h3>Thêm Game</h3>
 
-        <form class="FormGame" method="post" action="index.php?action=create">
+            <form class="FormGame" method="post" action="admin.php?action=createGame">
 
             <input
                 class="O"
@@ -181,13 +181,13 @@ KiemTraAdmin();
                 <td>
                     <a
                         class="Nut"
-                        href="admin.php?action=update&id=<?= $g["MaGame"] ?>">
+                        href="admin.php?action=updateGame&id=<?= $g["MaGame"] ?>">
                         Sửa
                     </a>
 
                     <a
                         class="Nut NutDo"
-                        href="admin.php?action=delete&id=<?= $g["MaGame"] ?>"
+                        href="admin.php?action=deleteGame&id=<?= $g["MaGame"] ?>"
                         onclick="return confirm('Bạn có chắc muốn xóa game này?')">
                         Xóa
                     </a>

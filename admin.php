@@ -1,19 +1,21 @@
 <?php
-
 session_start();
 
-require_once "function.php";
-require_once "controllers/GameController.php";
-require_once "controllers/TheLoaiController.php";
-require_once "controllers/NhaPhatHanhController.php";
-require_once "controllers/TaiKhoanController.php";
-require_once "controllers/UserController.php";
+require_once __DIR__. "function.php";
+require_once __DIR__. "database.php";
+require_once __DIR__. "controllers/GameController.php";
+require_once __DIR__. "controllers/TheLoaiController.php";
 
-$action = $_GET["action"] ?? "";
+// KiemTraAdmin(); 
+
+$action = $_GET["action"] ?? "game";
 
 switch ($action):
+    case "game":
+        $controller = new GameController();
+        $controller->admin();
+        break;
 
-    // ===== GAME =====
     case "createGame":
         $controller = new GameController();
         $controller->create();
@@ -29,7 +31,11 @@ switch ($action):
         $controller->delete((int)($_GET["id"] ?? 0));
         break;
 
-    // ===== THE LOAI =====
+    case "theloai":
+        $controller = new TheLoaiController();
+        $controller->index();
+        break;
+
     case "createTheLoai":
         $controller = new TheLoaiController();
         $controller->create();
@@ -45,40 +51,9 @@ switch ($action):
         $controller->delete((int)($_GET["id"] ?? 0));
         break;
 
-     // case "createNhaPhatHanh":
-    //     $controller = new NhaPhatHanhController();
-    //     $controller->create();
-    //     break;
-
-    // case "updateNhaPhatHanh":
-    //     $controller = new NhaPhatHanhController();
-    //     $controller->update((int) ($_GET["id"] ?? 0));
-    //     break;
-
-    // case "deleteNhaPhatHanh":
-    //     $controller = new NhaPhatHanhController();
-    //     $controller->delete((int) ($_GET["id"] ?? 0));
-    //     break;
-
-    // case "createTaiKhoan":
-    //     $controller = new TaiKhoanController();
-    //     $controller->create();
-    //     break;
-
-    // case "updateTaiKhoan":
-    //     $controller = new TaiKhoanController();
-    //     $controller->update((int) ($_GET["id"] ?? 0));
-    //     break;
-
-    // case "deleteTaiKhoan":
-    //     $controller = new TaiKhoanController();
-    //     $controller->delete((int) ($_GET["id"] ?? 0));
-    //     break;
-
     default:
-        header("Location: user.php?action=dangnhap");
-        exit;
-
+        $controller = new GameController();
+        $controller->admin();
+        break;
 endswitch;
-
 ?>

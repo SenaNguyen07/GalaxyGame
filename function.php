@@ -13,7 +13,7 @@ function DinhDangTien($gia)
 function KiemTraDangNhap()
 {
     if (!isset($_SESSION["MaTaiKhoan"])) {
-        header("Location: user.php?action=dangnhap");
+        header("Location: DangNhap.php");
         exit;
     }
 }
@@ -21,14 +21,9 @@ function KiemTraDangNhap()
 function KiemTraAdmin()
 {
     if (!isset($_SESSION["MaTaiKhoan"]) || $_SESSION["VaiTro"] != "admin") {
-        header("Location: user.php?action=dangnhap");
+        header("Location: DangNhap.php");
         exit;
     }
-}
-
-function TimKiem($tuKhoa)
-{
-    return "%" . $tuKhoa . "%";
 }
 
 function ThongBao($loai, $noiDung)

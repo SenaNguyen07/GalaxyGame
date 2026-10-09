@@ -1,7 +1,8 @@
-<?php session_start();
-require "database.php";
-require "function.php";
-KiemTraAdmin(); ?>
+<?php
+session_start();
+require "../database.php";
+require "../function.php";
+// KiemTraAdmin(); ?>
 <!doctype html>
 <html>
 
@@ -12,10 +13,15 @@ KiemTraAdmin(); ?>
 </head>
 
 <body>
-    <div class="Thanh MenuAdmin"><b class="Logo">GalaxyGame Admin</b><a href="QuanTri.php">Tổng quan</a><a
-            href="QuanLyGame.php">Game</a><a href="QuanLyTheLoai.php">Thể loại</a><a href="QuanLyNhaPhatHanh.php">Nhà
-            phát hành</a><a href="QuanLyTaiKhoan.php">Tài khoản</a><a href="QuanLyDonHang.php">Đơn hàng</a><a
-            href="KichHoatGame.php">Kích hoạt</a><a href="../TaiKhoan.php">👤</a></div>
+    <div class="Thanh MenuAdmin">
+        <b class="Logo">GalaxyGame Admin</b>
+        <a href="QuanTri.php">Tổng quan</a>
+        <a href="admin.php?action=game">Game</a>
+        <a href="admin.php?action=theloai">Thể loại</a>
+        <a href="">Nhà phát hành</a>
+        <a href="">Tài khoản</a>>
+        <a href="user.php?action=taikhoan">👤</a>
+    </div>
     <div class="NoiDung">
         <div class="Khung">
             <h1>Khu vực quản trị</h1>

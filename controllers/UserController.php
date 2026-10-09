@@ -1,8 +1,8 @@
 <?php
 
-require_once __DIR__ . "/../models/UserModel.php";
-require_once __DIR__ . "/../database.php";
-require_once __DIR__ . "/../function.php";
+require_once __DIR__ . "../models/UserModel.php";
+require_once __DIR__ . "../database.php";
+require_once __DIR__ . "../function.php";
 
 class UserController
 {
@@ -10,8 +10,7 @@ class UserController
 
     public function __construct()
     {
-        session_start();
-
+        // Đã xóa session_start() tại đây để tránh lỗi trùng lặp với file user.php
         $database = new Database();
         $this->model = new UserModel($database->getConnection());
     }
@@ -39,7 +38,7 @@ class UserController
                 setcookie("TenDangNhapNho", $ten, time() + 86400 * 30);
 
                 if ($tk["VaiTro"] == "admin") {
-                    header("Location: admin.php");
+                    header("Location: admin.php?action=game");
                 } else {
                     header("Location: user.php?action=trangchu");
                 }
@@ -336,3 +335,4 @@ class UserController
         require __DIR__ . "/../view/user.php";
     }
 }
+?>

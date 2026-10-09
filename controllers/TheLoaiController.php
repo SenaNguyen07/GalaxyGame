@@ -1,10 +1,8 @@
 <?php
 
-require_once __DIR__ . "/../models/TheLoaiModel.php";
-require_once __DIR__ . "/../database.php";
-require_once __DIR__ . "/../function.php";
-
-KiemTraAdmin();
+require_once __DIR__ . "models/TheLoaiModel.php";
+require_once __DIR__ . "database.php";
+require_once __DIR__ . "function.php";
 
 class TheLoaiController
 {
@@ -12,6 +10,8 @@ class TheLoaiController
 
     public function __construct()
     {
+        // KiemTraAdmin(); 
+        
         $database = new Database();
         $this->model = new TheLoaiModel($database->getConnection());
     }
@@ -22,7 +22,7 @@ class TheLoaiController
         $theLoaiSua = null;
         $loi = "";
 
-        require __DIR__ . "/../view/theloai.php";
+        require __DIR__ . "../view/theloai.php";
     }
 
     public function create()
@@ -39,7 +39,7 @@ class TheLoaiController
             $theLoais = $this->model->layDanhSach();
             $theLoaiSua = null;
 
-            require __DIR__ . "/../view/theloai.php";
+            require __DIR__ . "../view/theloai.php";
             return;
         }
 
@@ -56,7 +56,7 @@ class TheLoaiController
             $theLoaiSua = $this->model->lay($maTheLoai);
             $loi = "";
 
-            require __DIR__ . "/../view/theloai.php";
+            require __DIR__ . "../view/theloai.php";
             return;
         }
 
@@ -72,7 +72,7 @@ class TheLoaiController
             $theLoais = $this->model->layDanhSach();
             $theLoaiSua = $this->model->lay($maTheLoai);
 
-            require __DIR__ . "/../view/theloai.php";
+            require __DIR__ . "../view/theloai.php";
             return;
         }
 
@@ -97,5 +97,4 @@ class TheLoaiController
         exit;
     }
 }
-
 ?>
