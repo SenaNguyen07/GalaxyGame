@@ -11,7 +11,6 @@ class GameController
 
     public function __construct()
     {
-        // KiemTraAdmin(); 
         $db = new Database();
         $this->model = new GameModel($db->getConnection());
     }
@@ -37,7 +36,7 @@ class GameController
             $gameSua = null;
             $loi = "";
 
-            require __DIR__ . "../view/game.php";
+            require __DIR__ . "/../view/game.php";
             return;
         }
 

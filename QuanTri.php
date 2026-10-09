@@ -1,8 +1,9 @@
 <?php
 session_start();
-require "../database.php";
-require "../function.php";
-// KiemTraAdmin(); ?>
+require "database.php";
+require "function.php";
+KiemTraAdmin(); 
+?>
 <!doctype html>
 <html>
 

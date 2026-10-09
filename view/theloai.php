@@ -1,8 +1,8 @@
-<!-- <?php
+<?php
 
-// KiemTraAdmin();
+KiemTraAdmin();
 
-?> -->
+?>
 
 <!DOCTYPE html>
 

@@ -10,8 +10,6 @@ class TheLoaiController
 
     public function __construct()
     {
-        // KiemTraAdmin(); 
-        
         $database = new Database();
         $this->model = new TheLoaiModel($database->getConnection());
     }

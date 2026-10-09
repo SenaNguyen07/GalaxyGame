@@ -6,7 +6,7 @@ require_once __DIR__. "../database.php";
 require_once __DIR__. "../controllers/GameController.php";
 require_once __DIR__. "../controllers/TheLoaiController.php";
 
-// KiemTraAdmin(); 
+KiemTraAdmin(); 
 
 $action = $_GET["action"] ?? "game";
 

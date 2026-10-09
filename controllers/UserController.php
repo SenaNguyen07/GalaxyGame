@@ -10,7 +10,6 @@ class UserController
 
     public function __construct()
     {
-        // Đã xóa session_start() tại đây để tránh lỗi trùng lặp với file user.php
         $database = new Database();
         $this->model = new UserModel($database->getConnection());
     }

@@ -1,6 +1,6 @@
-<!-- <?php
-// KiemTraAdmin();
-?> -->
+<?php
+KiemTraAdmin();
+?>
 <!DOCTYPE html>
 <html>
 <head>
