@@ -160,7 +160,7 @@ JOIN Game g ON tv.MaGame = g.MaGame
 WHERE tv.TrangThaiKichHoat = 'ChoKichHoat';
 
 INSERT INTO TaiKhoan(TenDangNhap,MatKhau,HoTen,Email,VaiTro) VALUES
-('admin','123456','Quản trị viên','admin@gmail.com','admin'),
+('admin','123456','Nguyễn Minh Tú','tu9921699@gmail.com','admin'),
 ('user','123456','Nguyễn Văn A','user@gmail.com','user'),
 ('user2','123456','Trần Thị B','user2@gmail.com','user');
 
