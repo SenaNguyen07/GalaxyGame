@@ -22,7 +22,6 @@ KiemTraAdmin();
         <a href="">Nhà phát hành</a>
         <a href="">Tài khoản</a>
         <a href="user.php?action=profile">👤</a>
-
     </div>
     <div class="NoiDung">
         <div class="Khung">
@@ -32,5 +31,4 @@ KiemTraAdmin();
         </div>
     </div>
 </body>
-
 </html>
