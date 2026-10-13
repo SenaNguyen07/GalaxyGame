@@ -14,9 +14,11 @@ class TheLoaiController
         $this->model = new TheLoaiModel($database->getConnection());
     }
 
-    public function index()
+        public function index()
     {
-        $theLoais = $this->model->layDanhSach();
+        $tuKhoa = trim($_GET["tuKhoa"] ?? "");
+
+        $theLoais = $this->model->layDanhSach($tuKhoa);
         $theLoaiSua = null;
         $loi = "";
 

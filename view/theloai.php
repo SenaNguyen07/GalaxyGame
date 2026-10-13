@@ -53,6 +53,33 @@ KiemTraAdmin();
 
         <h3>Sửa Thể loại</h3>
 
+            <div class="Khung">
+
+        <h3>Danh sách Thể loại</h3>
+
+            <div class="Khung">
+
+        <h3>Danh sách Thể loại</h3>
+
+        <form method="get" action="admin.php" class="FormTim" style="margin-bottom: 20px;">
+            <input type="hidden" name="action" value="theloai"> 
+            
+            <input 
+                class="O" 
+                name="tuKhoa" 
+                value="<?= HienThi($_GET["tuKhoa"] ?? "") ?>" 
+                placeholder="Nhập tên thể loại cần tìm..." 
+                style="width: 300px;">
+                
+            <button type="submit" class="Nut">Tìm kiếm</button>
+            
+            <?php if(!empty($_GET["tuKhoa"])): ?>
+                <a href="admin.php?action=theloai" class="Nut NutXam">Xóa bộ lọc</a>
+            <?php endif; ?>
+        </form>
+
+        <table class="Bang">
+
         <form method="post" action="admin.php?action=updateTheLoai&id=<?= $theLoaiSua["MaTheLoai"] ?>">
 
             <input

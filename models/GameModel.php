@@ -8,16 +8,29 @@ class GameModel
         $this->pdo = $pdo;
     }
 
-    public function layDanhSach()
+       public function layDanhSach($tuKhoa = "")
     {
         $sql = "SELECT g.*, tl.TenTheLoai, nph.TenNhaPhatHanh
                 FROM Game g
                 INNER JOIN TheLoai tl ON g.MaTheLoai = tl.MaTheLoai
-                INNER JOIN NhaPhatHanh nph ON g.MaNhaPhatHanh = nph.MaNhaPhatHanh
-                ORDER BY g.MaGame DESC";
+                INNER JOIN NhaPhatHanh nph ON g.MaNhaPhatHanh = nph.MaNhaPhatHanh";
+        
+        if ($tuKhoa != "") {
+            $sql .= " WHERE g.TenGame LIKE ? 
+                      OR tl.TenTheLoai LIKE ? 
+                      OR nph.TenNhaPhatHanh LIKE ?";
+            $sql .= " ORDER BY g.MaGame DESC";
+            
+            $stmt = $this->pdo->prepare($sql);
+            $param = "%" . $tuKhoa . "%";
+            $stmt->execute([$param, $param, $param]);
+            return $stmt->fetchAll();
+        }
 
+        $sql .= " ORDER BY g.MaGame DESC";
         return $this->pdo->query($sql)->fetchAll();
     }
+
 
     public function layGame($maGame)
     {

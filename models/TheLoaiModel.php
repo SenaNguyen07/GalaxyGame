@@ -9,8 +9,19 @@ class TheLoaiModel
         $this->pdo = $pdo;
     }
 
-    public function layDanhSach()
+        public function layDanhSach($tuKhoa = "")
     {
+        if ($tuKhoa != "") {
+            $stmt = $this->pdo->prepare(
+                "SELECT * FROM TheLoai
+                 WHERE TenTheLoai LIKE ?
+                 ORDER BY MaTheLoai DESC"
+            );
+            $param = "%" . $tuKhoa . "%";
+            $stmt->execute([$param]);
+            return $stmt->fetchAll();
+        }
+        
         $stmt = $this->pdo->query(
             "SELECT * FROM TheLoai
              ORDER BY MaTheLoai DESC"
@@ -18,6 +29,7 @@ class TheLoaiModel
 
         return $stmt->fetchAll();
     }
+
 
     public function lay($maTheLoai)
     {

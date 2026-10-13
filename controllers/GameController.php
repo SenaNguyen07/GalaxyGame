@@ -15,9 +15,10 @@ class GameController
         $this->model = new GameModel($db->getConnection());
     }
 
-    public function admin()
+        public function admin()
     {
-        $games = $this->model->layDanhSach();
+        $tuKhoa = trim($_GET["tuKhoa"] ?? "");
+        $games = $this->model->layDanhSach($tuKhoa);
         $theLoais = $this->model->layTheLoai();
         $nhaPhatHanhs = $this->model->layNhaPhatHanh();
 
@@ -26,6 +27,7 @@ class GameController
 
         require __DIR__ . "/../view/game.php";
     }
+
 
     public function create()
     {

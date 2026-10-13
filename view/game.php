@@ -36,6 +36,30 @@ KiemTraAdmin();
 
     <div class="Khung">
         <h3>Sửa Game</h3>
+        
+        <div class="Khung">
+        <h3>Danh sách Game</h3>
+
+        <form method="get" action="admin.php" class="FormTim" style="margin-bottom: 20px;">
+            <input type="hidden" name="action" value="game"> 
+            
+            <input 
+                class="O" 
+                name="tuKhoa" 
+                value="<?= HienThi($_GET["tuKhoa"] ?? "") ?>" 
+                placeholder="Nhập tên game, thể loại..." 
+                style="width: 300px;">
+                
+            <button type="submit" class="Nut">Tìm kiếm</button>
+            
+            <?php if(!empty($_GET["tuKhoa"])): ?>
+                <a href="admin.php?action=game" class="Nut NutXam">Xóa bộ lọc</a>
+            <?php endif; ?>
+        </form>
+
+        <table class="Bang">
+
+
 
         <form method="post" action="admin.php?action=updateGame&id=<?= $gameSua["MaGame"] ?>">
 
