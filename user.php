@@ -1,73 +1,28 @@
 <?php
-
+// user.php
 session_start();
 
-include_once __DIR__ . "../controllers/UserController.php";
-
-$controller = new UserController();
+require_once __DIR__ . "/function.php";
+require_once __DIR__ . "/database.php";
+require_once __DIR__ . "/controllers/AuthController.php";
 
 $action = $_GET["action"] ?? "dangnhap";
+$auth = new AdminController();
 
-switch ($action):
-
+switch ($action) {
     case "dangnhap":
-        $controller->dangNhap();
+        $auth->login();
         break;
 
-        case "dangxuat":
-        $controller->dangXuat();
+    case "profile":
+        $auth->profile();
         break;
 
-    case "trangchu":
-        $controller->trangChu();
-        break;
-
-    case "cuahang":
-        $controller->cuaHang();
-        break;
-
-    case "chitiet":
-        $maGame = (int)($_GET["MaGame"] ?? 0);
-        $controller->chiTiet($maGame);
-        break;
-
-    case "yeuthich":
-        $controller->yeuThich();
-        break;
-
-    case "giohang":
-        $controller->gioHang();
-        break;
-
-    case "taikhoan":
-        $controller->taiKhoan();
-        break;
-
-    case "naptien":
-        $controller->napTien();
-        break;
-
-    case "giaodich":
-        $controller->giaoDich();
-        break;
-
-    case "thanhtoan":
-        $controller->thanhToan();
-        break;
-
-    case "thuvien":
-        $controller->thuVien();
-        break;
-
-    case "nhaphathanh":
-        $maNhaPhatHanh = (int)($_GET["MaNhaPhatHanh"] ?? 0);
-        $controller->nhaPhatHanh($maNhaPhatHanh);
+    case "dangxuat":
+        $auth->logout();
         break;
 
     default:
-        $controller->trangChu();
+        $auth->login();
         break;
-
-endswitch;
-
-?>
+}

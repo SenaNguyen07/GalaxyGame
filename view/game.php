@@ -18,7 +18,8 @@ KiemTraAdmin();
     <a href="admin.php?action=theloai">Thể loại</a>
     <a href="">NPH</a>
     <a href="">Tài khoản</a>
-    <a href="">👤</a>
+    <a href="user.php?action=profile">👤</a>
+
 </div>
 
 <div class="NoiDung">
