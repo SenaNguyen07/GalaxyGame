@@ -30,7 +30,6 @@ class TheLoaiModel
         return $stmt->fetchAll();
     }
 
-
     public function lay($maTheLoai)
     {
         $stmt = $this->pdo->prepare(
@@ -42,7 +41,6 @@ class TheLoaiModel
 
         return $stmt->fetch();
     }
-
     public function them($tenTheLoai, $trangThai)
     {
         $stmt = $this->pdo->prepare(

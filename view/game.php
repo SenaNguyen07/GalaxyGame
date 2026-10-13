@@ -61,8 +61,6 @@ KiemTraAdmin();
 
         <table class="Bang">
 
-
-
         <form method="post" action="admin.php?action=updateGame&id=<?= $gameSua["MaGame"] ?>">
 
             <input
