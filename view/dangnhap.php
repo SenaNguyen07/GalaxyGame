@@ -1,5 +1,4 @@
 <?php
-// view/dangnhap.php
 ?>
 <!DOCTYPE html>
 <html>
@@ -7,7 +6,7 @@
     <meta charset="UTF-8">
     <title>Đăng nhập hệ thống</title>
     <link rel="stylesheet" href="css/style.css">
-    <!-- <style>
+    <style>
         .KhungDangNhap {
             width: 400px;
             margin: 100px auto;
@@ -25,7 +24,7 @@
             width: 100%;
             margin-top: 10px;
         }
-    </style> -->
+    </style>
 </head>
 <body>
     <div class="KhungDangNhap">
