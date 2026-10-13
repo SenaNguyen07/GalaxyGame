@@ -7,23 +7,7 @@
     <title>Đăng nhập hệ thống</title>
     <link rel="stylesheet" href="css/style.css">
     <style>
-        .KhungDangNhap {
-            width: 400px;
-            margin: 100px auto;
-            padding: 30px;
-            background: #101010;
-            border-radius: 10px;
-            border: 1px solid #252525;
-            text-align: center;
-        }
-        .KhungDangNhap .O {
-            width: 100%;
-            margin-bottom: 15px;
-        }
-        .KhungDangNhap .Nut {
-            width: 100%;
-            margin-top: 10px;
-        }
+        
     </style>
 </head>
 <body>

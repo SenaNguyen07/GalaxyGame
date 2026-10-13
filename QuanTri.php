@@ -20,7 +20,7 @@ KiemTraAdmin();
         <a href="admin.php?action=game">Game</a>
         <a href="admin.php?action=theloai">Thể loại</a>
         <a href="">Nhà phát hành</a>
-        <a href="">Tài khoản</a>>
+        <a href="">Tài khoản</a>
         <a href="user.php?action=profile">👤</a>
 
     </div>
